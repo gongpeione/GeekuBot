@@ -1,8 +1,9 @@
 import { cmdReg } from './commands';
 import bot from '../bot';
+import { isGroupMsg } from '../utils/';
 
-export default class BotCmd {
-    constructor (cmdName, cb) {
+class BotCmdClass {
+    on (cmdName, cb) {
         this.reg = cmdReg[cmdName];
         this.cmd = cmdName;
         this.cb = cb;
@@ -14,10 +15,13 @@ export default class BotCmd {
     start () {
         bot.onText(this.reg, (msg, match) => {
             console.log(match, this.reg);
-            if (msg.chat.type === 'group' && !match[1]) {
+            const isGroup = isGroupMsg(msg);
+            if (isGroup && !match[1]) {
                 return
             }
             this.cb.call(null, msg, match);
         });
     }
 }
+
+export default new BotCmdClass();

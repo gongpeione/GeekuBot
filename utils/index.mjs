@@ -14,12 +14,10 @@ export let uuid = (() => {
     }
 })();
 
-export function checkGroupMsg (msg, match) {
-    if (msg.chat.type === 'group' && !match[1]) {
-        return true;
-    }
+export function isGroupMsg (msg) {
+    return msg.chat.type === 'group';
 }
 
 export default {
-    http, uuid
+    http, uuid, isGroupMsg
 }

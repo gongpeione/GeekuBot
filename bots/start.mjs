@@ -1,8 +1,8 @@
 import helpText from './help';
 import bot from '../bot';
-import BotCmd from './BotCmd';
+import botCmd from './BotCmd';
 
-new BotCmd('start', (msg, match) => {
+botCmd.on('start', (msg, match) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, helpText);
 });
