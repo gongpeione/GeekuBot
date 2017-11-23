@@ -1,4 +1,5 @@
 import bot from '../bot';
+import BotCmd from './BotCmd';
 
 export const helpText = `
 雷猴我是一个机器人，我阔以做这些事：
@@ -6,7 +7,7 @@ export const helpText = `
 /help 查看帮助
 `;
 
-bot.onText(/\/h(elp)?$/, (msg, match) => {
+new BotCmd('start', (msg, match) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, helpText);
 });

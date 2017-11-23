@@ -5,7 +5,7 @@ const bot = new TelegramBot(config.TOKEN, { polling: true });
 
 bot.on('message', msg => {
     const chatId = msg.chat.id;
-    console.log(`${chatId}: ${msg.text}`);
-})
+    console.log(`[${msg.message_id}] ` + JSON.stringify(msg));
+});
 
 export default bot;

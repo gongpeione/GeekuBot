@@ -7,6 +7,19 @@ export const http = axios.create({
     },
 });
 
+export let uuid = (() => {
+    let id = 0;
+    return () => {
+        return id++;
+    }
+})();
+
+export function checkGroupMsg (msg, match) {
+    if (msg.chat.type === 'group' && !match[1]) {
+        return true;
+    }
+}
+
 export default {
-    http
+    http, uuid
 }
