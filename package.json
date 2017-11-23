@@ -1,0 +1,11 @@
+{
+  "name": "GeekuBot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gongpeione/GeekuBot.git",
+  "author": "Geeku <ggongpei@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.29.0"
+  }
+}
