@@ -6,6 +6,8 @@
   "author": "Geeku <ggongpei@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2",
     "node-telegram-bot-api": "^0.29.0"
   }
 }
